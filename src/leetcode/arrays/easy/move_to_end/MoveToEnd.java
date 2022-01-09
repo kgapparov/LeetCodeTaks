@@ -17,8 +17,8 @@ public class MoveToEnd {
      * @param toMove number which we should move to the end
      * @return moved all elements of toMove to the end of array
      */
-    public static List<Integer> moveElementToEnd(List<Integer> array, int toMove) {
-        /**
+    public static List<Integer> moveElementToEndWithoutOrder(List<Integer> array, int toMove) {
+        /*
          * to solve this task we can use two point pattern.
          * left will increase until gets toMove
          * right will decrease until not equal to toMove and ready to swap with left.
@@ -36,6 +36,25 @@ public class MoveToEnd {
         }
         return array;
     }
+
+    /**
+     * LeetCode task 283
+     * @param array input List(array)
+     * @param toMove digit to move
+     * @return moved result with maintaining order;
+     */
+    public static List<Integer> moveElementToEndWithOrder(List<Integer> array, int toMove) {
+        int lastIndex = 0;
+        for (int i = 0; i < array.size(); i++) {
+            if (array.get(i) != toMove) {
+                array.set(lastIndex++, array.get(i));
+            }
+        }
+        for (int i = lastIndex; i < array.size(); i++) {
+            array.set(i, toMove);
+        }
+        return array;
+    }
     private static void swap(List<Integer> array, int left, int right) {
         int temp = array.get(left);
         array.set(left, array.get(right));
@@ -43,6 +62,8 @@ public class MoveToEnd {
     }
 
     public static void main(String[] args) {
-        moveElementToEnd(new ArrayList<>(List.of(1,2,3,3,4,3,2,1,2,3)), 3).stream().forEach(System.out::println);
+        moveElementToEndWithoutOrder(new ArrayList<>(List.of(1,2,3,3,4,3,2,1,2,3)), 3).forEach(System.out::println);
+        System.out.println("With Order ");
+        moveElementToEndWithOrder(new ArrayList<>(List.of(1,2,3,3,4,3,2,1,2,3)), 3).forEach(System.out::println);
     }
 }
