@@ -17,12 +17,30 @@ public class ThreeNumberSumTest {
 
     @Test
     public void getAllThreeSum() {
-        List<Integer> input = new ArrayList<>(List.of(1,2,3,4,5,6,7));
+        //Case 1
+        List<Integer> input = new ArrayList<>(List.of(-1,0,1,2,-1,-4,-2,-3,3,0,4));
         List<Integer[]> expected = new ArrayList<>();
-        expected.add(new Integer[]{1,2,5});
-        expected.add(new Integer[]{1,3,4});
-        List<Integer[]> output = ThreeNumberSum.getAllThreeSum(input, 8);
+        //[[-4,0,4],[-4,1,3],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2],[-1,0,1]]
+        expected.add(new Integer[]{-4,0,4});
+        expected.add(new Integer[]{-4,1,3});
+        expected.add(new Integer[]{-3,-1,4});
+        expected.add(new Integer[]{-3,0,3});
+        expected.add(new Integer[]{-3,1,2});
+        expected.add(new Integer[]{-2,-1,3});
+        expected.add(new Integer[]{-2,0,2});
+        expected.add(new Integer[]{-1,-1,2});
+        expected.add(new Integer[]{-1,0,1});
+        List<Integer[]> output = ThreeNumberSum.getAllThreeSum(input, 0);
         assertTrue(compare(expected, output));
+    //case 2
+        input = new ArrayList<>(List.of(-1,0,1,2,-1,-4));
+        expected = new ArrayList<>();
+        //[[-4,0,4],[-4,1,3],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2],[-1,0,1]]
+        expected.add(new Integer[]{-1,0,1});
+        expected.add(new Integer[]{-1,-1,2});
+        output = ThreeNumberSum.getAllThreeSum(input, 0);
+        assertTrue(compare(expected, output));
+
     }
 
     private boolean compare(List<Integer[]> triplets1, List<Integer[]> triplets2) {

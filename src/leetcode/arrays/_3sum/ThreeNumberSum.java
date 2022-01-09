@@ -23,6 +23,8 @@ public class ThreeNumberSum {
         Collections.sort(nums);
         for (int i = 0; i < nums.size() - 2; i++) {
             int currentNumber = nums.get(i);
+            if ((i > 0 ) && currentNumber == nums.get(i-1)) continue;
+
             int left = i+1, right = nums.size()-1;
 
             //applying binary search
@@ -33,6 +35,8 @@ public class ThreeNumberSum {
                     result.add(new Integer[]{currentNumber, nums.get(left), nums.get(right)});
                     left++;
                     right--;
+                    //remove duplicates on left
+                    while (nums.get(left -1) == nums.get(left) && left < right) left++;
                 } else if (pairSum < difference) {
                     left++;
                 } else {
