@@ -1,4 +1,4 @@
-package leetcode.arrays.smallest_difference;
+package leetcode.arrays.easy.smallest_difference;
 
 import java.util.Arrays;
 
