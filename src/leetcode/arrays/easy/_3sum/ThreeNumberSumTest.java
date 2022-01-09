@@ -1,4 +1,4 @@
-package leetcode.arrays._3sum;
+package leetcode.arrays.easy._3sum;
 
 import org.junit.Before;
 import org.junit.Test;

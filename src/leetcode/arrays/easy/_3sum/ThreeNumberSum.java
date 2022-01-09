@@ -1,4 +1,4 @@
-package leetcode.arrays._3sum;
+package leetcode.arrays.easy._3sum;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +19,7 @@ public class ThreeNumberSum {
      * @return all Variations of triplets which sums of elements equals to targetSum;
      */
     public static List<Integer[]> getAllThreeSum(List<Integer> nums, int targetSum){
-        /**
+        /*
          * to solve this taks we can first sort input,
          * starting from left getCurrent[index] and search pairs from right side with binary approach;
          */
@@ -42,7 +42,7 @@ public class ThreeNumberSum {
                     left++;
                     right--;
                     //remove duplicates on left
-                    while (nums.get(left -1) == nums.get(left) && left < right) left++;
+                    while (nums.get(left -1).equals(nums.get(left)) && left < right) left++;
                 } else if (pairSum < difference) {
                     left++;
                 } else {
@@ -51,5 +51,5 @@ public class ThreeNumberSum {
             }
         }
         return result;
-    };
+    }
 }
