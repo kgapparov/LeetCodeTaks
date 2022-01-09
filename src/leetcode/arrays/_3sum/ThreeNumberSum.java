@@ -5,13 +5,19 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author: Khassangali Gapparov
- * @Date: 01/08/2022
- * @version: 0.0.1
- * @target: F(M)ANG & Tesla!
+ * @author Khassangali Gapparov
+ * @Date  01/08/2022
+ * @version  0.0.1
+ * @target  F(M)ANG & Tesla!
  */
 
 public class ThreeNumberSum {
+
+    /**
+     * @param nums List of Integer
+     * @param targetSum The target sum
+     * @return all Variations of triplets which sums of elements equals to targetSum;
+     */
     public static List<Integer[]> getAllThreeSum(List<Integer> nums, int targetSum){
         /**
          * to solve this taks we can first sort input,
