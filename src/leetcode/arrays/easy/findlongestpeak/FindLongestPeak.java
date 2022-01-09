@@ -30,6 +30,7 @@ public class FindLongestPeak {
                 while (left > 0 && array[left] > array[left-1]) {
                     left--;
                 }
+                //move left from i to left
                 while (right < array.length && (array[right] > array[right+1])) {
                     right++;
                 }
