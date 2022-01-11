@@ -45,7 +45,22 @@ public class FirstDuplicateValue {
         return slow;
     }
 
+    /**
+     * First with modifying input array.
+     * @param array input array
+     * @return return repeated value;
+     */
+    public static int firstDuplicateValueModified(int[] array) {
+        for (int value : array) {
+            int absValue = Math.abs(value);
+            if (array[absValue-1] < 0) return absValue;
+            array[absValue -1] *= -1;
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         System.out.println(firstDuplicateValue(new int[] {1,2,3,4,4,5,6}));
+        System.out.println(firstDuplicateValueModified(new int[] {1,2,3,4,4,5,6}));
     }
 }
