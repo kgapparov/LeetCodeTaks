@@ -1,4 +1,4 @@
-package leetcode.arrays.easy.findlongestpeak;
+package leetcode.arrays.medium.findlongestpeak;
 
 /**
  * @author Khassangali Gapparov

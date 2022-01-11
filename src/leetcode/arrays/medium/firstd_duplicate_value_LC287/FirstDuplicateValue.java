@@ -1,4 +1,4 @@
-package leetcode.arrays.easy.medium.firstd_duplicate_value_LC287;
+package leetcode.arrays.medium.firstd_duplicate_value_LC287;
 
 /**
  * @author Khassangali Gapparov
