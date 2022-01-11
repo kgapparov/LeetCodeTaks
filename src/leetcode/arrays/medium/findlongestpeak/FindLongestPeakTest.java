@@ -1,8 +1,8 @@
-package leetcode.arrays.easy.findlongestpeak;
+package leetcode.arrays.medium.findlongestpeak;
 
 import org.junit.Test;
 
-import static leetcode.arrays.easy.findlongestpeak.FindLongestPeak.findLongestPeak;
+import static leetcode.arrays.medium.findlongestpeak.FindLongestPeak.findLongestPeak;
 import static org.junit.Assert.*;
 
 public class FindLongestPeakTest {
