@@ -80,6 +80,9 @@ public class EveryDayTraining {
         if (left == null || right == null) {
             return left == right;
         }
+        if (left.val != right.val) {
+            return false;
+        }
         return isSymmetric1(left.left, right.right) && isSymmetric1(left.right, right.left);
     }
 
