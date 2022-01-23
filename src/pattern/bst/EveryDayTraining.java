@@ -89,6 +89,14 @@ public class EveryDayTraining {
 
     //Path Sum
 
+    private boolean pathSum(TreeNode root, int targetSum) {
+         if (root == null) return false;
+
+         if (root.left == null && root.right == null) {
+             return root.val == targetSum;
+         }
+         return pathSum(root.left, targetSum - root.val) || pathSum(root.right, targetSum - root.val);
+    }
     //Binary Search Tree Unipath
 
     //ConstructBSTInorderPostorder
